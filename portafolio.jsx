@@ -1,5 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, Code, Database, Server, Cpu } from 'lucide-react';
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Phone,
+  MapPin,
+  ExternalLink,
+  Code,
+  Database,
+  Server,
+  Cpu,
+  Layers,
+  GitBranch,
+  Cloud,
+  Monitor
+} from "lucide-react";
+
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('home');
@@ -14,10 +30,30 @@ export default function Portfolio() {
   }, []);
 
   const skills = {
-    languages: ['Java', 'Python', 'C++', 'HTML', 'CSS', 'PHP', 'JavaScript'],
-    databases: ['MySQL', 'PostgreSQL', 'OracleSQL', 'phpMyAdmin'],
-    tools: ['Visual Studio Code', 'Git', 'Node.js', 'Laravel', 'Android Studio', 'PowerDesigner', 'Knime', 'StarUML']
-  };
+  languages: [
+    'Java', 'Python', 'C++', 'HTML', 'CSS', 'PHP', 'JavaScript', 'TypeScript'
+  ],
+  databases: [
+    'MySQL', 'PostgreSQL', 'OracleSQL', 'SQLite', 'phpMyAdmin'
+  ],
+  tools: [
+    'Visual Studio Code', 'GitHub', 'GitLab', 'Node.js', 'Laravel', 'Android Studio',
+    'PowerDesigner', 'Knime', 'StarUML', 'Postman'
+  ],
+  frameworks: [
+    'React', 'Next.js', 'Express.js', 'Spring Boot'
+  ],
+  cloud: [
+    'AWS (EC2, S3)', 'Firebase','Hosting y Deploy Web'
+  ],
+  methodologies: [
+     'UML',
+    'SCRUM',
+    'Análisis y Diseño de Sistemas',
+    'Modelado Entidad-Relación'
+  ]
+};
+
 
   const projects = [
     {
@@ -33,9 +69,25 @@ export default function Portfolio() {
       ],
       status: "En desarrollo - 2025",
       institution: "Universidad Católica Ntra. Sra. de la Asunción"
-    }
-  ];
+    },
+    {
+  title: "Sistema Web de Gestión para Gimnasio ISPORT",
+  type: "Proyecto de Investigación Académico",
+  description: "Desarrollo de un sistema web para optimizar la gestión de personal trainers y clientes, permitiendo el registro, aprobación y seguimiento de planes de entrenamiento.",
+  tech: ["PHP", "MySQL", "HTML5", "CSS3"],
+  highlights: [
+    "Arquitectura cliente-servidor",
+    "Diseño de base de datos relacional",
+    "Modelado UML completo",
+    "Control de roles (Cliente, Instructor, Secretario)",
+    "Implementación en servidor web"
+  ],
+  status: "Proyecto Final - 2021",
+  institution: "Colegio Presbiteriano Cerritos - Paraguay"
+}
 
+  ];
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100">
       {/* Animated Background */}
@@ -101,10 +153,10 @@ export default function Portfolio() {
               </a>
             </div>
             <div className="flex gap-6 pt-6">
-              <a href="https://github.com" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
+              <a href="https://github.com/matiasespinola2003-netizen" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
                 <Github size={24} />
               </a>
-              <a href="https://linkedin.com" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
+              <a href="www.linkedin.com/in/matias-espinola-19a2363ab" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
                 <Linkedin size={24} />
               </a>
               <a href="mailto:matiasespinola2003@gmail.com" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
@@ -220,7 +272,7 @@ export default function Portfolio() {
             </h2>
             <p className="text-slate-400 text-lg">Tecnologías y herramientas que domino</p>
           </div>
-
+          
           <div className="grid md:grid-cols-3 gap-8">
             {/* Languages */}
             <div className="group relative">
@@ -240,7 +292,24 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-
+             {/* Frameworks */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-cyan-500/30 transition-all duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6">
+                  <Layers size={28} />
+                </div>
+                <h3 className="text-2xl font-bold mb-6">frameworks</h3>
+                <div className="space-y-3">
+                  {skills.frameworks.map((skill, i) => (
+                    <div key={i} className="flex items-center gap-3 text-slate-300 hover:text-cyan-400 transition-colors duration-300">
+                      <span className="text-cyan-400">▹</span>
+                      <span>{skill}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>      
             {/* Databases */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -278,6 +347,42 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
+            {/* Methodologies */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-violet-500/30 transition-all duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-violet-500 to-violet-600 rounded-xl flex items-center justify-center mb-6">
+                 <GitBranch  size={28} />
+                </div>
+                <h3 className="text-2xl font-bold mb-6">Metodologias</h3>
+                <div className="space-y-3">
+                  {skills.methodologies.map((skill, i) => (
+                    <div key={i} className="flex items-center gap-3 text-slate-300 hover:text-violet-400 transition-colors duration-300">
+                      <span className="text-violet-400">▹</span>
+                      <span>{skill}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+               {/* Cloud  */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-violet-500/30 transition-all duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-violet-500 to-violet-600 rounded-xl flex items-center justify-center mb-6">
+                 <Cloud size={28} />
+                </div>
+                <h3 className="text-2xl font-bold mb-6">Nube</h3>
+                <div className="space-y-3">
+                  {skills.cloud.map((skill, i) => (
+                    <div key={i} className="flex items-center gap-3 text-slate-300 hover:text-violet-400 transition-colors duration-300">
+                      <span className="text-violet-400">▹</span>
+                      <span>{skill}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>  
           </div>
         </div>
       </section>
@@ -327,8 +432,14 @@ export default function Portfolio() {
                 <div className="mb-4">
                   <h3 className="text-2xl font-bold mb-2">Formación Académica</h3>
                   <p className="text-emerald-400 font-semibold">Universidad Católica Ntra. Sra. de la Asunción</p>
-                  <p className="text-slate-400">Análisis de Sistemas | 2022 - Presente</p>
-                  <p className="text-slate-500 text-sm mt-2">Cursando 4to año del último semestre</p>
+                  <p className="text-slate-400">Analisis de Sistemas | 2022 - Presente</p>
+                  <p className="text-slate-500 text-sm mt-2">Cursando el ultimo año culminando la tesis</p>
+                </div>
+                <div className="mb-4">
+                 
+                  <p className="text-emerald-400 font-semibold">Colegio Prebisteriano Ceritos</p>
+                  <p className="text-slate-400">Bachiller Técnico en Servicios| 2018 - 2021</p>
+                  <p className="text-slate-500 text-sm mt-2">Terminado</p>
                 </div>
                 <div className="pt-4 border-t border-slate-700/50">
                   <h4 className="font-semibold text-cyan-400 mb-2">Certificados Obtenidos:</h4>
@@ -337,10 +448,19 @@ export default function Portfolio() {
                       <span className="text-emerald-400">•</span>
                       <span>Mejor alumno por Excelencia Académica</span>
                     </li>
+                     <li className="flex items-start gap-2">
+                      <span className="text-emerald-400">•</span>
+                      <span>Aplicación</span>
+                    </li>
                     <li className="flex items-start gap-2">
                       <span className="text-emerald-400">•</span>
                       <span>Mejor Egresado del Nivel Medio</span>
                     </li>
+                     <li className="flex items-start gap-2">
+                      <span className="text-emerald-400">•</span>
+                      <span>Técnico en Servicios</span>
+                    </li>
+                    
                   </ul>
                 </div>
               </div>
@@ -406,10 +526,10 @@ export default function Portfolio() {
               © 2025 Matías Espinola. Todos los derechos reservados.
             </div>
             <div className="flex gap-6">
-              <a href="https://github.com" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
+              <a href="https://github.com/matiasespinola2003-netizen" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
                 <Github size={20} />
               </a>
-              <a href="https://linkedin.com" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
+              <a href="www.linkedin.com/in/matias-espinola-19a2363ab" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
                 <Linkedin size={20} />
               </a>
               <a href="mailto:matiasespinola2003@gmail.com" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
