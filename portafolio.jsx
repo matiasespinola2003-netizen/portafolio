@@ -12,8 +12,7 @@ import {
   Cpu,
   Layers,
   GitBranch,
-  Cloud,
-  Monitor
+  Cloud
 } from "lucide-react";
 
 
