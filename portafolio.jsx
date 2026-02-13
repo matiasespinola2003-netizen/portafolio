@@ -155,7 +155,7 @@ export default function Portfolio() {
               <a href="https://github.com/matiasespinola2003-netizen" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
                 <Github size={24} />
               </a>
-              <a href="https://www.linkedin.com/in/matias-espinola-19a2363ab" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
+              <a href="https://linkedin.com/in/matias-espinola-19a2363ab" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
                 <Linkedin size={24} />
               </a>
               <a href="mailto:matiasespinola2003@gmail.com" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
@@ -528,7 +528,7 @@ export default function Portfolio() {
               <a href="https://github.com/matiasespinola2003-netizen" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
                 <Github size={20} />
               </a>
-              <a href="https://www.linkedin.com/in/matias-espinola-19a2363ab" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
+              <a href="https://linkedin.com/in/matias-espinola-19a2363ab" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
                 <Linkedin size={20} />
               </a>
               <a href="mailto:matiasespinola2003@gmail.com" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
