@@ -15,7 +15,6 @@ import {
   Cloud
 } from "lucide-react";
 
-
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
@@ -54,39 +53,54 @@ export default function Portfolio() {
 };
 
 
-  const projects = [
-    {
-      title: "Sistema de Rehabilitación Muscular con Kinect",
-      type: "Tesis de Grado",
-      description: "Sistema automatizado de seguimiento y análisis del movimiento corporal mediante Microsoft Kinect para supervisión remota de ejercicios terapéuticos.",
-      tech: ["Python", "OpenCV", "Kinect SDK", "MySQL", "HTML/CSS"],
-      highlights: [
-        "Captura de movimiento en tiempo real",
-        "Análisis de ángulos articulares",
-        "Retroalimentación inmediata al paciente",
-        "Supervisión remota por profesionales"
-      ],
-      status: "En desarrollo - 2025",
-      institution: "Universidad Católica Ntra. Sra. de la Asunción"
-    },
-    {
-  title: "Sistema Web de Gestión para Gimnasio ISPORT",
-  type: "Proyecto de Investigación Académico",
-  description: "Desarrollo de un sistema web para optimizar la gestión de personal trainers y clientes, permitiendo el registro, aprobación y seguimiento de planes de entrenamiento.",
-  tech: ["PHP", "MySQL", "HTML5", "CSS3"],
-  highlights: [
-    "Arquitectura cliente-servidor",
-    "Diseño de base de datos relacional",
-    "Modelado UML completo",
-    "Control de roles (Cliente, Instructor, Secretario)",
-    "Implementación en servidor web"
-  ],
-  status: "Proyecto Final - 2021",
-  institution: "Colegio Presbiteriano Cerritos - Paraguay"
-}
+ const projects = [
+  {
+    
+    title: "Sistema de Rehabilitación Muscular con Kinect",
+    type: "Tesis de Grado",
+    description: "Sistema automatizado de seguimiento y análisis del movimiento corporal mediante Microsoft Kinect para supervisión remota de ejercicios terapéuticos.",
+    tech: ["Python", "OpenCV", "Kinect SDK", "MySQL", "HTML/CSS"],
+    highlights: [
+      "Captura de movimiento en tiempo real",
+      "Análisis de ángulos articulares",
+      "Retroalimentación inmediata al paciente",
+      "Supervisión remota por profesionales"
+    ],
+    status: "En desarrollo - 2025",
+    institution: "Universidad Católica Ntra. Sra. de la Asunción"
+  },
+  {
+    title: "Sistema Web de Gestión para Gimnasio ISPORT",
+    type: "Proyecto de Investigación Académico",
+    description: "Desarrollo de un sistema web para optimizar la gestión de personal trainers y clientes, permitiendo el registro, aprobación y seguimiento de planes de entrenamiento.",
+    tech: ["PHP", "MySQL", "HTML5", "CSS3"],
+    highlights: [
+      "Arquitectura cliente-servidor",
+      "Diseño de base de datos relacional",
+      "Modelado UML completo",
+      "Control de roles (Cliente, Instructor, Secretario)",
+      "Implementación en servidor web"
+    ],
+    status: "Proyecto Final - 2021",
+    institution: "Colegio Presbiteriano Cerritos - Paraguay"
+  },
+  {
+    type: "Freelance",
+    title: "Dulce Antojo - Página Web",
+    institution: "Proyecto Personal",
+    status: "Finalizado",
+    description: "Landing page para repostería artesanal con catálogo de productos, contacto vía WhatsApp y diseño responsivo.",
+    highlights: [
+      "Diseño atractivo y cálido",
+      "Formulario de pedidos con seña",
+      "Integración con Google Maps y redes sociales"
+    ],
+    tech:["HTML", "CSS", "JavaScript", "Google Analytics", "WhatsApp API"],
+    image: '/images/dulceantojo.png', // ruta de tu captura o logo
+    link: "https://dulce-antojo-py.vercel.app/" // demo online o GitHub Pages
+  }
+];
 
-  ];
-  
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100">
       {/* Animated Background */}
@@ -216,15 +230,15 @@ export default function Portfolio() {
             <div key={idx} className="relative group mb-8">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-cyan-500/30 transition-all duration-300">
-                <div className="flex justify-between items-start mb-6">
-                  <div>
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
+                  <div className="mb-4 md:mb-0">
                     <div className="inline-block px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-emerald-400 text-sm mb-3">
                       {project.type}
                     </div>
                     <h3 className="text-3xl font-bold mb-2">{project.title}</h3>
                     <p className="text-slate-400">{project.institution}</p>
                   </div>
-                  <div className="px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-lg text-cyan-400 text-sm font-medium">
+                  <div className="px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-lg text-cyan-400 text-sm font-medium self-start md:self-auto">
                     {project.status}
                   </div>
                 </div>
@@ -232,7 +246,15 @@ export default function Portfolio() {
                 <p className="text-slate-300 text-lg mb-6 leading-relaxed">
                   {project.description}
                 </p>
+                 {project.image && (
+        <img src={project.image} alt={project.title} className="rounded-lg mb-6 w-full max-w-md object-cover" />
+      )}
 
+      {project.link && (
+        <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-block px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-lg text-cyan-400 text-sm font-medium hover:bg-cyan-500/20 transition" >
+          Ver Demo
+        </a>
+      )}
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
                   <div>
                     <h4 className="text-sm font-semibold text-cyan-400 mb-3 uppercase tracking-wider">Características Principales</h4>
