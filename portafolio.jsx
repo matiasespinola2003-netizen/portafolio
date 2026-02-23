@@ -531,11 +531,14 @@ export default function Portfolio() {
           </div>
 
           <a 
-            href="mailto:matiasespinola2003@gmail.com" 
-            className="inline-block px-10 py-4 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-lg font-semibold text-lg hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 hover:-translate-y-1"
-          >
-            Enviar un mensaje
-          </a>
+  href="https://wa.me/595986370000?text=Hola%20Matías,%20quiero%20más%20información%20sobre%20tus%20servicios" 
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block px-10 py-4 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-lg font-semibold text-lg hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 hover:-translate-y-1"
+>
+  Enviar un mensaje
+</a>
+
         </div>
       </section>
 
