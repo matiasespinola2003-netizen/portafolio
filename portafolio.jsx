@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import imgDulceAntojo from './assets/dulceantojo.png';
-import imgTorito from './assets/torito.png';
 import {
   Github,
   Linkedin,
@@ -98,7 +97,7 @@ export default function Portfolio() {
       "Integración con Google Maps y redes sociales"
     ],
     tech:["HTML", "CSS", "JavaScript", "Google Analytics", "WhatsApp API"],
-    image: imgDulceAntojo, // ruta de tu captura o logo
+    image: '../images/dulceantojo.png', // ruta de tu captura o logo
     link: "https://dulce-antojo-py.vercel.app/" // demo online o GitHub Pages
   },
   {
@@ -106,14 +105,14 @@ export default function Portfolio() {
     title: "Torito - Prueba Página Web",
     institution: "Proyecto Personal",
     status: "Finalizado",
-    description: "Landing page para pedidos deuna hamburguesía con catálogo de productos, con carrito y detectando la ubicación del cliente, calculo automatico y diseño responsivo.",
+    description: "Landing page para pedidos de una hamburguesía con catálogo de productos, con carrito y detectando la ubicación del cliente, calculo automatico y diseño responsivo.",
     highlights: [
       "Diseño atractivo y cálido",
       "Formulario de pedidos con carrito de compras",
       "Integración con Google Maps de parte del cliente"
     ],
     tech:["HTML", "CSS", "PHP", "Google Analytics", "WhatsApp API"],
-    image: imgTorito, // ruta de tu captura o logo
+    image: '../images/torito.png', // ruta de tu captura o logo
     link: "https://modelo-prueba-contacto.vercel.app/" // demo online o GitHub Pages
   }
 ];
