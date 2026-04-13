@@ -20,6 +20,40 @@ import {
 
 export default function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
+
+  const marqueeItems = [
+    'Desarrollo Web', 'Análisis de Sistemas', 'Bases de Datos', 'React & Next.js',
+    'Java & Python', 'Spring Boot', 'Proyectos Freelance', 'AWS & Firebase',
+    'SCRUM & UML', 'APIs REST', 'MySQL & PostgreSQL', 'Trabajo Remoto'
+  ];
+
+  const faqItems = [
+    {
+      question: '¿Estás disponible para proyectos freelance?',
+      answer: 'Sí, estoy disponible para proyectos freelance de desarrollo web, sistemas de gestión, landing pages y APIs. Podemos hablar del alcance y acordar tiempos y condiciones sin compromiso.'
+    },
+    {
+      question: '¿Podés trabajar de forma remota?',
+      answer: 'Sí, trabajo 100% de forma remota. Me comunico por WhatsApp, correo o videollamada según la preferencia del cliente, y entrego avances periódicos para mantener todo transparente.'
+    },
+    {
+      question: '¿Qué tipo de proyectos buscás?',
+      answer: 'Me interesan sistemas web, landing pages, aplicaciones de gestión, APIs REST y proyectos académicos o empresariales que combinen análisis de datos, bases de datos y desarrollo fullstack.'
+    },
+    {
+      question: '¿En qué etapa de tu carrera estás?',
+      answer: 'Estoy en el último semestre de Análisis de Sistemas en la Universidad Católica, desarrollando mi tesis sobre rehabilitación muscular con Kinect. Cuento con experiencia práctica en proyectos académicos y freelance.'
+    },
+    {
+      question: '¿Cuánto tiempo tardás en entregar un proyecto?',
+      answer: 'Depende del alcance. Una landing page puede estar lista en 1-2 semanas, un sistema de gestión más completo puede llevar 1-2 meses. Siempre defino tiempos claros antes de comenzar.'
+    },
+    {
+      question: '¿Trabajás con empresas o solo con clientes directos?',
+      answer: 'Trabajo tanto con clientes directos como con empresas o agencias que necesiten apoyo en desarrollo. Estoy abierto a colaboraciones, proyectos puntuales o contratos a largo plazo.'
+    },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -254,6 +288,18 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+
+      {/* Marquee Banner */}
+      <div className="relative overflow-hidden bg-gradient-to-r from-violet-600 to-violet-700 py-4">
+        <div className="marquee-track flex gap-12 whitespace-nowrap">
+          {[...marqueeItems, ...marqueeItems].map((item, i) => (
+            <span key={i} className="text-white font-semibold text-sm tracking-wide flex items-center gap-3">
+              {item}
+              <span className="text-amber-400 text-lg">•</span>
+            </span>
+          ))}
+        </div>
+      </div>
 
       {/* About Me Section */}
       <section id="sobre-mi" className="py-24 px-6 relative">
@@ -633,6 +679,65 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-24 px-6 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            {/* Left: Title + WhatsApp card */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-4xl font-bold mb-4 leading-tight">
+                  Lo que necesitás saber sobre{' '}
+                  <span className="bg-gradient-to-r from-violet-400 to-amber-400 bg-clip-text text-transparent">
+                    mis servicios de desarrollo
+                  </span>
+                </h2>
+              </div>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/20 to-amber-500/10 rounded-2xl blur-xl"></div>
+                <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-violet-500/20 rounded-2xl p-8">
+                  <h3 className="text-xl font-bold mb-2">¿Tenés más preguntas?</h3>
+                  <p className="text-slate-400 mb-6 leading-relaxed">
+                    ¿No encontraste la respuesta que buscabas?<br />
+                    Escribime por WhatsApp y te respondo sin compromiso.
+                  </p>
+                  <a
+                    href="https://wa.me/595986370000?text=Hola%20Mat%C3%ADas,%20tengo%20una%20consulta"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-8 py-4 bg-gradient-to-r from-violet-500 to-violet-600 rounded-full font-semibold hover:shadow-lg hover:shadow-violet-500/30 transition-all duration-300 hover:-translate-y-1"
+                  >
+                    Escribir a WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Accordion */}
+            <div className="space-y-3">
+              {faqItems.map((item, i) => (
+                <div key={i} className="border border-slate-700/50 rounded-xl overflow-hidden hover:border-violet-500/30 transition-colors duration-300">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="w-full flex justify-between items-center px-6 py-4 text-left bg-gradient-to-br from-slate-800/30 to-slate-900/30 hover:bg-slate-800/50 transition-colors duration-300"
+                  >
+                    <span className="font-medium text-slate-200 pr-4">{item.question}</span>
+                    <span className="text-violet-400 text-xl flex-shrink-0">
+                      {openFaq === i ? '−' : '↗'}
+                    </span>
+                  </button>
+                  {openFaq === i && (
+                    <div className="px-6 py-4 bg-slate-900/50 border-t border-slate-700/30">
+                      <p className="text-slate-400 leading-relaxed">{item.answer}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contacto" className="py-24 px-6 relative">
         <div className="max-w-4xl mx-auto text-center">
@@ -707,6 +812,16 @@ export default function Portfolio() {
       </footer>
 
       <style jsx>{`
+        @keyframes marquee {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+        .marquee-track {
+          animation: marquee 25s linear infinite;
+        }
+        .marquee-track:hover {
+          animation-play-state: paused;
+        }
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
