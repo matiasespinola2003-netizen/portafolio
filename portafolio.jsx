@@ -387,77 +387,155 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
+      {/* Freelance Projects — Visual Showcase */}
       <section id="proyectos" className="py-24 px-6 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
+            <p className="text-amber-400 font-semibold uppercase tracking-widest text-sm mb-3">✦ Proyectos freelance ✦</p>
             <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-violet-400 to-amber-400 bg-clip-text text-transparent">
-              Proyectos Destacados
+              Algunos de mis trabajos
             </h2>
-            <p className="text-slate-400 text-lg">Trabajos académicos y desarrollo de software</p>
+            <p className="text-slate-400 text-lg">Sitios web reales entregados a clientes</p>
           </div>
 
-          {projects.map((project, idx) => (
-            <div key={idx} className="relative group mb-8">
-              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-amber-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-violet-500/30 transition-all duration-300">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
-                  <div className="mb-4 md:mb-0">
-                    <div className="inline-block px-3 py-1 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 text-sm mb-3">
-                      {project.type}
-                    </div>
-                    <h3 className="text-3xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-slate-400">{project.institution}</p>
+          {/* Dulce Antojo */}
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-28">
+            <div className="space-y-6">
+              <div className="inline-block px-3 py-1 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 text-sm font-medium">
+                Landing page · Repostería artesanal
+              </div>
+              <h3 className="text-5xl font-bold bg-gradient-to-r from-violet-400 to-amber-400 bg-clip-text text-transparent leading-tight">
+                Dulce Antojo
+              </h3>
+              <p className="text-slate-300 text-lg leading-relaxed">
+                Diseñé y desarrollé una <strong className="text-white">landing page completa</strong> para una repostería artesanal de Ypané, Paraguay.
+                El sitio incluye un catálogo de productos, formulario de pedido con <strong className="text-amber-400">seña del 50%</strong>,
+                integración con WhatsApp e Instagram y mapa de ubicación para facilitar el contacto con clientes.
+              </p>
+              <ul className="space-y-2 text-slate-300">
+                {['Catálogo de productos con categorías', 'Formulario de pedido con depósito', 'Integración WhatsApp y Google Maps', 'Diseño responsivo mobile-first'].map((item, i) => (
+                  <li key={i} className="flex items-center gap-2">
+                    <span className="text-amber-400">▹</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-2 pt-2">
+                {['HTML', 'CSS', 'JavaScript', 'WhatsApp API', 'Google Analytics'].map((t, i) => (
+                  <span key={i} className="px-3 py-1 bg-slate-700/50 border border-slate-600/50 rounded-lg text-sm text-slate-300">{t}</span>
+                ))}
+              </div>
+              <a
+                href="https://dulce-antojo-py.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-500 to-amber-500 rounded-lg font-semibold hover:shadow-lg hover:shadow-violet-500/25 transition-all duration-300 hover:-translate-y-1"
+              >
+                Ver sitio en vivo →
+              </a>
+            </div>
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/30 to-amber-500/30 rounded-2xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
+              <img
+                src="/images/dulceantojo.png"
+                alt="Dulce Antojo - Landing page repostería"
+                className="relative rounded-2xl border border-slate-700/50 w-full shadow-2xl group-hover:scale-[1.02] transition-transform duration-300"
+              />
+            </div>
+          </div>
+
+          {/* El Torito */}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="relative group md:order-2">
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-500/30 to-violet-500/30 rounded-2xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
+              <img
+                src="/images/torito.png"
+                alt="El Torito - Sistema de pedidos"
+                className="relative rounded-2xl border border-slate-700/50 w-full shadow-2xl group-hover:scale-[1.02] transition-transform duration-300"
+              />
+            </div>
+            <div className="space-y-6 md:order-1">
+              <div className="inline-block px-3 py-1 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 text-sm font-medium">
+                Sistema de pedidos · Hamburguesería
+              </div>
+              <h3 className="text-5xl font-bold bg-gradient-to-r from-amber-400 to-violet-400 bg-clip-text text-transparent leading-tight">
+                El Torito
+              </h3>
+              <p className="text-slate-300 text-lg leading-relaxed">
+                Sistema de pedidos web para hamburguesería con <strong className="text-amber-400">carrito de compras</strong> y
+                una funcionalidad destacada: <strong className="text-white">detección automática de la ubicación del cliente</strong> para
+                calcular el costo de delivery según la distancia al local en tiempo real.
+              </p>
+              <ul className="space-y-2 text-slate-300">
+                {['Carrito de compras interactivo', 'Geolocalización automática del cliente', 'Cálculo de delivery por distancia', 'Menú con precios en Guaraníes', 'Envío del pedido por WhatsApp'].map((item, i) => (
+                  <li key={i} className="flex items-center gap-2">
+                    <span className="text-violet-400">▹</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-2 pt-2">
+                {['HTML', 'CSS', 'PHP', 'Geolocation API', 'WhatsApp API'].map((t, i) => (
+                  <span key={i} className="px-3 py-1 bg-slate-700/50 border border-slate-600/50 rounded-lg text-sm text-slate-300">{t}</span>
+                ))}
+              </div>
+              <a
+                href="https://modelo-prueba-contacto.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-500 to-violet-500 rounded-lg font-semibold hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300 hover:-translate-y-1"
+              >
+                Ver sitio en vivo →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Academic Projects — Cards */}
+      <section className="py-16 px-6 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-violet-400 font-semibold uppercase tracking-widest text-sm mb-3">✦ Proyectos académicos ✦</p>
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-violet-400 to-amber-400 bg-clip-text text-transparent">
+              Desarrollo universitario
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                type: "Tesis de Grado · En desarrollo",
+                title: "Sistema de Rehabilitación Muscular con Kinect",
+                institution: "Universidad Católica Ntra. Sra. de la Asunción",
+                description: "Sistema automatizado de seguimiento corporal con Microsoft Kinect para supervisión remota de ejercicios terapéuticos. Captura de movimiento en tiempo real con análisis de ángulos articulares.",
+                tech: ["Python", "OpenCV", "Kinect SDK", "MySQL"],
+              },
+              {
+                type: "Proyecto Final · 2021",
+                title: "Sistema Web de Gestión para Gimnasio ISPORT",
+                institution: "Colegio Presbiteriano Cerritos",
+                description: "Sistema web para gestión de personal trainers y clientes con arquitectura cliente-servidor, modelado UML completo y control de roles (Cliente, Instructor, Secretario).",
+                tech: ["PHP", "MySQL", "HTML5", "CSS3"],
+              }
+            ].map((p, i) => (
+              <div key={i} className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 to-amber-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-violet-500/30 transition-all duration-300 h-full">
+                  <div className="inline-block px-3 py-1 bg-violet-500/10 border border-violet-500/20 rounded-full text-violet-400 text-xs font-medium mb-4">
+                    {p.type}
                   </div>
-                  <div className="px-4 py-2 bg-violet-500/10 border border-violet-500/20 rounded-lg text-violet-400 text-sm font-medium self-start md:self-auto">
-                    {project.status}
-                  </div>
-                </div>
-
-                <p className="text-slate-300 text-lg mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {project.image && (
-                  <img src={project.image} alt={project.title} className="rounded-lg mb-6 w-full max-w-md object-cover" />
-                )}
-
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block mb-6 px-4 py-2 bg-violet-500/10 border border-violet-500/20 rounded-lg text-violet-400 text-sm font-medium hover:bg-violet-500/20 transition"
-                  >
-                    Ver Demo
-                  </a>
-                )}
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="text-sm font-semibold text-violet-400 mb-3 uppercase tracking-wider">Características Principales</h4>
-                    <ul className="space-y-2">
-                      {project.highlights.map((highlight, i) => (
-                        <li key={i} className="flex items-start gap-2 text-slate-300">
-                          <span className="text-amber-400 mt-1">▹</span>
-                          <span>{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-violet-400 mb-3 uppercase tracking-wider">Tecnologías Utilizadas</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, i) => (
-                        <span key={i} className="px-3 py-1 bg-slate-700/50 border border-slate-600/50 rounded-lg text-sm text-slate-300">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                  <h3 className="text-xl font-bold mb-1">{p.title}</h3>
+                  <p className="text-amber-400 text-sm mb-4">{p.institution}</p>
+                  <p className="text-slate-400 leading-relaxed mb-6">{p.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {p.tech.map((t, j) => (
+                      <span key={j} className="px-3 py-1 bg-slate-700/50 border border-slate-600/50 rounded-lg text-xs text-slate-300">{t}</span>
+                    ))}
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
