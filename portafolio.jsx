@@ -18,6 +18,45 @@ import {
   Briefcase
 } from "lucide-react";
 
+function Carousel({ images, alt }) {
+  const [current, setCurrent] = useState(0);
+  const prev = () => setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
+  const next = () => setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+  return (
+    <div className="relative group">
+      <div className="absolute inset-0 bg-gradient-to-r from-violet-500/30 to-amber-500/30 rounded-2xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
+      <div className="relative rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl">
+        <img
+          src={images[current]}
+          alt={`${alt} - vista ${current + 1}`}
+          className="w-full object-cover transition-all duration-500"
+        />
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={prev}
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-slate-900/80 hover:bg-violet-600 rounded-full flex items-center justify-center text-white transition-colors duration-200 backdrop-blur-sm"
+            >‹</button>
+            <button
+              onClick={next}
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-slate-900/80 hover:bg-violet-600 rounded-full flex items-center justify-center text-white transition-colors duration-200 backdrop-blur-sm"
+            >›</button>
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+              {images.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`w-2 h-2 rounded-full transition-all duration-200 ${i === current ? 'bg-amber-400 w-5' : 'bg-slate-400/60'}`}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
@@ -388,9 +427,9 @@ export default function Portfolio() {
 
       {/* Projects Section */}
       {/* Freelance Projects — Visual Showcase */}
-      <section id="proyectos" className="py-24 px-6 relative">
+      <section id="proyectos" className="py-16 md:py-24 px-6 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-12 md:mb-20">
             <p className="text-amber-400 font-semibold uppercase tracking-widest text-sm mb-3">✦ Proyectos freelance ✦</p>
             <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-violet-400 to-amber-400 bg-clip-text text-transparent">
               Algunos de mis trabajos
@@ -399,12 +438,12 @@ export default function Portfolio() {
           </div>
 
           {/* Dulce Antojo */}
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-28">
+          <div className="grid md:grid-cols-2 gap-10 items-center mb-16 md:mb-28">
             <div className="space-y-6">
               <div className="inline-block px-3 py-1 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 text-sm font-medium">
                 Landing page · Repostería artesanal
               </div>
-              <h3 className="text-5xl font-bold bg-gradient-to-r from-violet-400 to-amber-400 bg-clip-text text-transparent leading-tight">
+              <h3 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-violet-400 to-amber-400 bg-clip-text text-transparent leading-tight">
                 Dulce Antojo
               </h3>
               <p className="text-slate-300 text-lg leading-relaxed">
@@ -434,31 +473,25 @@ export default function Portfolio() {
                 Ver sitio en vivo →
               </a>
             </div>
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/30 to-amber-500/30 rounded-2xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
-              <img
-                src="/images/dulceantojo.png"
-                alt="Dulce Antojo - Landing page repostería"
-                className="relative rounded-2xl border border-slate-700/50 w-full shadow-2xl group-hover:scale-[1.02] transition-transform duration-300"
-              />
-            </div>
+            <Carousel
+              images={['/images/dulceantojo-1.png', '/images/dulceantojo-2.png', '/images/dulceantojo-3.png']}
+              alt="Dulce Antojo"
+            />
           </div>
 
           {/* El Torito */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative group md:order-2">
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-500/30 to-violet-500/30 rounded-2xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
-              <img
-                src="/images/torito.png"
-                alt="El Torito - Sistema de pedidos"
-                className="relative rounded-2xl border border-slate-700/50 w-full shadow-2xl group-hover:scale-[1.02] transition-transform duration-300"
+            <div className="order-2 md:order-1">
+              <Carousel
+                images={['/images/torito-1.png', '/images/torito-2.png']}
+                alt="El Torito"
               />
             </div>
-            <div className="space-y-6 md:order-1">
+            <div className="order-1 md:order-2 space-y-6">
               <div className="inline-block px-3 py-1 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 text-sm font-medium">
                 Sistema de pedidos · Hamburguesería
               </div>
-              <h3 className="text-5xl font-bold bg-gradient-to-r from-amber-400 to-violet-400 bg-clip-text text-transparent leading-tight">
+              <h3 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-400 to-violet-400 bg-clip-text text-transparent leading-tight">
                 El Torito
               </h3>
               <p className="text-slate-300 text-lg leading-relaxed">
