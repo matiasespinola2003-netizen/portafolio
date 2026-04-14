@@ -345,77 +345,72 @@ export default function Portfolio() {
 
       {/* About Me Section */}
       <section id="sobre-mi" className="py-24 px-6 relative">
+        {/* Foto izquierda + texto derecha */}
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-violet-400 to-amber-400 bg-clip-text text-transparent">
-              Sobre mí
-            </h2>
-            <p className="text-slate-400 text-lg">Conoce un poco más sobre mi trayectoria</p>
-          </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
 
-          <div className="flex flex-col gap-10 mb-16">
-            {/* Bio — foto grande + texto compacto */}
-            <div className="flex flex-col md:flex-row gap-8 items-start">
+            {/* FOTO con blob */}
+            <div className="relative flex justify-center items-end">
+              {/* Blob violeta detrás */}
+              <div className="absolute w-72 h-72 md:w-96 md:h-96 bg-violet-600 blob-shape blob-float opacity-80"></div>
+              {/* Blob ámbar pequeño decorativo */}
+              <div className="absolute top-4 right-8 w-16 h-16 bg-amber-400 blob-shape-sm blob-float-sm opacity-90"></div>
               {/* Foto */}
-              <div className="relative flex-shrink-0 mx-auto md:mx-0">
-                <div className="relative w-44 h-44 rounded-3xl overflow-hidden border-2 border-violet-500/40 shadow-2xl">
-                  <img src="/images/foto-mati-1.png" alt="Matías" className="w-full h-full object-cover object-top scale-110" />
-                </div>
-                <div className="absolute -bottom-2 -right-2 px-3 py-1 bg-gradient-to-r from-violet-600 to-violet-700 rounded-full text-xs font-bold shadow-lg">
-                  Disponible ✓
-                </div>
-                <div className="absolute -top-2 -left-2 w-6 h-6 bg-emerald-500 rounded-full border-2 border-slate-900 animate-pulse"></div>
-              </div>
-              {/* Texto */}
-              <div className="space-y-4 flex-1">
-                <div>
-                  <h3 className="text-2xl font-bold">Matías Espinola</h3>
-                  <p className="text-violet-400 font-medium">Dev Fullstack · Ypané, Paraguay 🇵🇾</p>
-                </div>
-                <p className="text-slate-300 leading-relaxed">
-                  Estudiante del último año de <span className="text-violet-400 font-semibold">Análisis de Sistemas UC</span>.
-                  Desarrollé sistemas web, apps de gestión y proyectos freelance reales.
-                  Mi tesis combina <span className="text-amber-400 font-semibold">visión artificial y medicina</span> con tecnología Kinect.
-                </p>
-                <p className="text-slate-400 leading-relaxed text-sm">
-                  Busco crecer en desarrollo fullstack, análisis de datos y cloud.
-                  Disponible para freelance, colaboraciones y oportunidades laborales.
-                </p>
-                <a
-                  href="https://wa.me/595986370000?text=Hola%20Mat%C3%ADas,%20quiero%20hablar%20contigo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-6 py-3 bg-gradient-to-r from-violet-500 to-amber-500 rounded-lg font-semibold text-sm hover:shadow-lg hover:shadow-violet-500/25 transition-all duration-300 hover:-translate-y-1"
-                >
-                  Hablemos por WhatsApp
-                </a>
-              </div>
+              <img
+                src="/images/foto-mati-2.png"
+                alt="Matías Espinola"
+                className="relative z-10 w-72 md:w-80 object-contain drop-shadow-2xl"
+                style={{ maxHeight: '480px' }}
+              />
             </div>
 
-            {/* Skill Bars — compactas y animadas */}
-            <div className="mt-8">
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-violet-500 rounded-lg flex items-center justify-center">
-                  <Code size={16} />
-                </div>
-                <h3 className="text-xl font-bold">Nivel de dominio</h3>
+            {/* TEXTO */}
+            <div className="space-y-6">
+              <p className="text-violet-400 font-semibold uppercase tracking-widest text-sm">Sobre mí</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+                ¿Quién es{' '}
+                <span className="bg-gradient-to-r from-violet-400 to-amber-400 bg-clip-text text-transparent">
+                  Matías Espinola?
+                </span>
+              </h2>
+              <p className="text-slate-300 text-lg leading-relaxed">
+                Soy desarrollador web freelance y estudiante de <span className="text-violet-400 font-semibold">Análisis de Sistemas UC</span>, donde descubrí el poder del desarrollo y la tecnología.
+              </p>
+              <p className="text-slate-400 leading-relaxed">
+                Con mis proyectos creo sitios web reales que ayudan a emprendedores y marcas a tener presencia digital profesional. Actualmente finalizando mi tesis sobre <span className="text-amber-400 font-semibold">rehabilitación muscular con Kinect</span>.
+              </p>
+              <a
+                href="#proyectos"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-violet-600 to-violet-700 rounded-full font-semibold hover:shadow-lg hover:shadow-violet-500/30 transition-all duration-300 hover:-translate-y-1"
+              >
+                Ver mis proyectos
+              </a>
+            </div>
+          </div>
+
+          {/* Skill Bars */}
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-violet-500 rounded-lg flex items-center justify-center">
+                <Code size={16} />
               </div>
-              <div className="grid grid-cols-1 gap-3">
-                {mainSkills.map((skill, i) => (
-                  <div key={i} className="group">
-                    <div className="flex justify-between mb-1">
-                      <span className="text-slate-300 text-sm font-medium group-hover:text-white transition-colors">{skill.name}</span>
-                      <span className="text-violet-400 text-sm font-bold">{skill.level}%</span>
-                    </div>
-                    <div className="w-full h-2 bg-slate-700/50 rounded-full overflow-hidden">
-                      <div
-                        className="h-full rounded-full bg-gradient-to-r from-violet-500 to-amber-500 skill-bar-animate"
-                        style={{ '--skill-width': `${skill.level}%`, animationDelay: `${i * 0.1}s` }}
-                      ></div>
-                    </div>
+              <h3 className="text-xl font-bold">Nivel de dominio</h3>
+            </div>
+            <div className="grid md:grid-cols-2 gap-x-12 gap-y-4">
+              {mainSkills.map((skill, i) => (
+                <div key={i} className="group">
+                  <div className="flex justify-between mb-1">
+                    <span className="text-slate-300 text-sm font-medium group-hover:text-white transition-colors">{skill.name}</span>
+                    <span className="text-violet-400 text-sm font-bold">{skill.level}%</span>
                   </div>
-                ))}
-              </div>
+                  <div className="w-full h-2 bg-slate-700/50 rounded-full overflow-hidden">
+                    <div
+                      className="h-full rounded-full bg-gradient-to-r from-violet-500 to-amber-500 skill-bar-animate"
+                      style={{ '--skill-width': `${skill.level}%`, animationDelay: `${i * 0.12}s` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -1050,6 +1045,23 @@ export default function Portfolio() {
         .animate-gradient {
           background-size: 200% auto;
           animation: gradient 3s ease infinite;
+        }
+        .blob-shape {
+          border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+        .blob-shape-sm {
+          border-radius: 58% 42% 35% 65% / 52% 44% 56% 48%;
+        }
+        @keyframes blobFloat {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          33% { transform: translateY(-12px) rotate(3deg); }
+          66% { transform: translateY(6px) rotate(-2deg); }
+        }
+        .blob-float {
+          animation: blobFloat 6s ease-in-out infinite;
+        }
+        .blob-float-sm {
+          animation: blobFloat 4s ease-in-out infinite reverse;
         }
       `}</style>
     </div>
