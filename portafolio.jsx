@@ -290,38 +290,41 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* Profile Card */}
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-amber-500 rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
-            <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-violet-500 to-amber-500 rounded-xl flex items-center justify-center text-2xl font-bold">
-                  M
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold">Matías Espinola</h3>
-                  <p className="text-slate-400">22 años</p>
+          {/* Profile Photo Card */}
+          <div className="relative group flex justify-center">
+            <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-amber-500 rounded-3xl blur-2xl opacity-25 group-hover:opacity-40 transition-opacity duration-500"></div>
+            <div className="relative w-full max-w-sm">
+              {/* Photo */}
+              <div className="relative rounded-3xl overflow-hidden border-2 border-violet-500/30 shadow-2xl">
+                <img
+                  src="/images/foto-mati-2.png"
+                  alt="Matías Espinola"
+                  className="w-full object-cover object-top"
+                  style={{ maxHeight: '520px' }}
+                />
+                {/* Gradient overlay bottom */}
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950 to-transparent"></div>
+                {/* Info overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="font-bold text-white text-lg">Matías Espinola</p>
+                      <p className="text-violet-400 text-sm">Dev Fullstack · Paraguay 🇵🇾</p>
+                    </div>
+                    <div className="flex gap-3">
+                      <a href="https://github.com/matiasespinola2003-netizen" className="w-9 h-9 bg-slate-800/80 hover:bg-violet-600 rounded-full flex items-center justify-center transition-colors duration-200">
+                        <Github size={16} />
+                      </a>
+                      <a href="https://linkedin.com/in/matias-espinola-19a2363ab" className="w-9 h-9 bg-slate-800/80 hover:bg-violet-600 rounded-full flex items-center justify-center transition-colors duration-200">
+                        <Linkedin size={16} />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="space-y-3 text-slate-300">
-                <div className="flex items-center gap-3">
-                  <MapPin size={18} className="text-violet-400" />
-                  <span>Paso de Oro/Villa Patricia, Ypané</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone size={18} className="text-violet-400" />
-                  <span>0986370000</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail size={18} className="text-violet-400" />
-                  <span>matiasespinola2003@gmail.com</span>
-                </div>
-              </div>
-              <div className="pt-4 border-t border-slate-700/50">
-                <p className="text-sm text-slate-400 leading-relaxed">
-                  Estudiante del último semestre — tesista en Análisis de Sistemas con conocimientos en programación,
-                  bases de datos e informática. Apasionado por seguir aprendiendo y trabajar.
-                </p>
+              {/* Floating badge */}
+              <div className="absolute -top-3 -right-3 px-4 py-2 bg-gradient-to-r from-violet-500 to-amber-500 rounded-full text-xs font-bold shadow-lg">
+                Disponible ✓
               </div>
             </div>
           </div>
@@ -353,11 +356,18 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-2 gap-16 items-start mb-16">
             {/* Bio */}
             <div className="space-y-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-amber-500 rounded-lg flex items-center justify-center">
-                  <User size={20} />
+              {/* Foto casual + nombre */}
+              <div className="flex items-center gap-5 mb-2">
+                <div className="relative flex-shrink-0">
+                  <div className="w-20 h-20 rounded-2xl overflow-hidden border-2 border-violet-500/40 shadow-lg">
+                    <img src="/images/foto-mati-1.png" alt="Matías" className="w-full h-full object-cover object-top" />
+                  </div>
+                  <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 rounded-full border-2 border-slate-900"></div>
                 </div>
-                <h3 className="text-2xl font-bold">Mi historia</h3>
+                <div>
+                  <h3 className="text-2xl font-bold">Mi historia</h3>
+                  <p className="text-slate-400 text-sm">Matías Espinola · Ypané, PY 🇵🇾</p>
+                </div>
               </div>
               <p className="text-slate-300 leading-relaxed text-lg">
                 Soy Matías Espinola, estudiante del último año de Análisis de Sistemas en la
