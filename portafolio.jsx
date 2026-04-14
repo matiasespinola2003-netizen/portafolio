@@ -212,8 +212,8 @@ export default function Portfolio() {
       {/* Animated Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute w-96 h-96 bg-violet-500/10 rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
-        <div className="absolute w-96 h-96 bg-amber-500/10 rounded-full blur-3xl top-1/3 -right-48 animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl bottom-0 left-1/3 animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute w-96 h-96 bg-amber-500/10 rounded-full blur-3xl top-1/3 -right-48 animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl bottom-0 left-1/3 animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
       {/* Navigation */}
@@ -357,7 +357,7 @@ export default function Portfolio() {
               <div className="absolute top-4 right-8 w-16 h-16 bg-amber-400 blob-shape-sm blob-float-sm opacity-90"></div>
               {/* Foto */}
               <img
-                src="/images/foto-mati-2.png"
+                src="/images/foto-mati-1.png"
                 alt="Matías Espinola"
                 className="relative z-10 w-72 md:w-80 object-contain drop-shadow-2xl"
                 style={{ maxHeight: '480px' }}
