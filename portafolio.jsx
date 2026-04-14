@@ -353,68 +353,69 @@ export default function Portfolio() {
             <p className="text-slate-400 text-lg">Conoce un poco más sobre mi trayectoria</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-16 items-start mb-16">
-            {/* Bio */}
-            <div className="space-y-6">
-              {/* Foto casual + nombre */}
-              <div className="flex items-center gap-5 mb-2">
-                <div className="relative flex-shrink-0">
-                  <div className="w-20 h-20 rounded-2xl overflow-hidden border-2 border-violet-500/40 shadow-lg">
-                    <img src="/images/foto-mati-1.png" alt="Matías" className="w-full h-full object-cover object-top" />
-                  </div>
-                  <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 rounded-full border-2 border-slate-900"></div>
+          <div className="flex flex-col gap-10 mb-16">
+            {/* Bio — foto grande + texto compacto */}
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              {/* Foto */}
+              <div className="relative flex-shrink-0 mx-auto md:mx-0">
+                <div className="relative w-44 h-44 rounded-3xl overflow-hidden border-2 border-violet-500/40 shadow-2xl">
+                  <img src="/images/foto-mati-1.png" alt="Matías" className="w-full h-full object-cover object-top scale-110" />
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold">Mi historia</h3>
-                  <p className="text-slate-400 text-sm">Matías Espinola · Ypané, PY 🇵🇾</p>
+                <div className="absolute -bottom-2 -right-2 px-3 py-1 bg-gradient-to-r from-violet-600 to-violet-700 rounded-full text-xs font-bold shadow-lg">
+                  Disponible ✓
                 </div>
+                <div className="absolute -top-2 -left-2 w-6 h-6 bg-emerald-500 rounded-full border-2 border-slate-900 animate-pulse"></div>
               </div>
-              <p className="text-slate-300 leading-relaxed text-lg">
-                Soy Matías Espinola, estudiante del último año de Análisis de Sistemas en la
-                <span className="text-violet-400 font-semibold"> Universidad Católica Ntra. Sra. de la Asunción</span>.
-                Mi pasión por la tecnología nació en el colegio, donde me gradué como Mejor Egresado del Nivel Medio.
-              </p>
-              <p className="text-slate-300 leading-relaxed text-lg">
-                A lo largo de mi carrera he desarrollado sistemas web, aplicaciones de gestión y proyectos freelance.
-                Actualmente estoy desarrollando mi tesis sobre rehabilitación muscular con tecnología Kinect,
-                combinando <span className="text-amber-400 font-semibold">visión artificial y medicina</span> para impactar positivamente la vida de las personas.
-              </p>
-              <p className="text-slate-300 leading-relaxed text-lg">
-                Me interesa seguir creciendo en el desarrollo fullstack, el análisis de datos y la computación en la nube.
-                Estoy disponible para proyectos freelance, colaboraciones académicas y oportunidades laborales.
-              </p>
-              <a
-                href="https://wa.me/595986370000?text=Hola%20Mat%C3%ADas,%20quiero%20hablar%20contigo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-8 py-4 bg-gradient-to-r from-violet-500 to-amber-500 rounded-lg font-semibold hover:shadow-lg hover:shadow-violet-500/25 transition-all duration-300 hover:-translate-y-1"
-              >
-                Hablemos por WhatsApp
-              </a>
+              {/* Texto */}
+              <div className="space-y-4 flex-1">
+                <div>
+                  <h3 className="text-2xl font-bold">Matías Espinola</h3>
+                  <p className="text-violet-400 font-medium">Dev Fullstack · Ypané, Paraguay 🇵🇾</p>
+                </div>
+                <p className="text-slate-300 leading-relaxed">
+                  Estudiante del último año de <span className="text-violet-400 font-semibold">Análisis de Sistemas UC</span>.
+                  Desarrollé sistemas web, apps de gestión y proyectos freelance reales.
+                  Mi tesis combina <span className="text-amber-400 font-semibold">visión artificial y medicina</span> con tecnología Kinect.
+                </p>
+                <p className="text-slate-400 leading-relaxed text-sm">
+                  Busco crecer en desarrollo fullstack, análisis de datos y cloud.
+                  Disponible para freelance, colaboraciones y oportunidades laborales.
+                </p>
+                <a
+                  href="https://wa.me/595986370000?text=Hola%20Mat%C3%ADas,%20quiero%20hablar%20contigo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 bg-gradient-to-r from-violet-500 to-amber-500 rounded-lg font-semibold text-sm hover:shadow-lg hover:shadow-violet-500/25 transition-all duration-300 hover:-translate-y-1"
+                >
+                  Hablemos por WhatsApp
+                </a>
+              </div>
             </div>
 
-            {/* Skill Bars */}
-            <div className="space-y-5">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-500 rounded-lg flex items-center justify-center">
-                  <Code size={20} />
+            {/* Skill Bars — compactas y animadas */}
+            <div className="mt-8">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-violet-500 rounded-lg flex items-center justify-center">
+                  <Code size={16} />
                 </div>
-                <h3 className="text-2xl font-bold">Nivel de dominio</h3>
+                <h3 className="text-xl font-bold">Nivel de dominio</h3>
               </div>
-              {mainSkills.map((skill, i) => (
-                <div key={i}>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-slate-300 font-medium">{skill.name}</span>
-                    <span className="text-violet-400 font-semibold">{skill.level}%</span>
+              <div className="grid grid-cols-1 gap-3">
+                {mainSkills.map((skill, i) => (
+                  <div key={i} className="group">
+                    <div className="flex justify-between mb-1">
+                      <span className="text-slate-300 text-sm font-medium group-hover:text-white transition-colors">{skill.name}</span>
+                      <span className="text-violet-400 text-sm font-bold">{skill.level}%</span>
+                    </div>
+                    <div className="w-full h-2 bg-slate-700/50 rounded-full overflow-hidden">
+                      <div
+                        className="h-full rounded-full bg-gradient-to-r from-violet-500 to-amber-500 skill-bar-animate"
+                        style={{ '--skill-width': `${skill.level}%`, animationDelay: `${i * 0.1}s` }}
+                      ></div>
+                    </div>
                   </div>
-                  <div className="w-full h-2.5 bg-slate-700/50 rounded-full overflow-hidden">
-                    <div
-                      className="h-full rounded-full bg-gradient-to-r from-violet-500 to-amber-500 transition-all duration-1000"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
 
@@ -1007,6 +1008,14 @@ export default function Portfolio() {
       </footer>
 
       <style jsx>{`
+        @keyframes skillLoad {
+          from { width: 0%; opacity: 0.5; }
+          to { width: var(--skill-width); opacity: 1; }
+        }
+        .skill-bar-animate {
+          animation: skillLoad 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          width: 0%;
+        }
         .projects-hero-bg {
           background-color: #0a0a0f;
           background-image:
