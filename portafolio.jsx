@@ -29,7 +29,7 @@ function Carousel({ images, alt }) {
         <img
           src={images[current]}
           alt={`${alt} - vista ${current + 1}`}
-          className="w-full h-auto max-h-96 object-contain object-center transition-all duration-500 bg-slate-800/50"
+          className="w-full h-72 md:h-96 object-cover object-center transition-all duration-500"
         />
         {images.length > 1 && (
           <>
