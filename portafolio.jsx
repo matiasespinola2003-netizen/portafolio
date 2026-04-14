@@ -227,6 +227,7 @@ export default function Portfolio() {
               {[
                 { label: 'Inicio', href: '#inicio' },
                 { label: 'Sobre mí', href: '#sobre-mi' },
+                { label: 'Servicios', href: '#servicios' },
                 { label: 'Proyectos', href: '#proyectos' },
                 { label: 'Habilidades', href: '#habilidades' },
                 { label: 'Contacto', href: '#contacto' },
@@ -427,6 +428,81 @@ export default function Portfolio() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Servicios Section */}
+      <section id="servicios" className="py-24 px-6 relative bg-slate-950">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+            <div>
+              <p className="text-violet-400 font-semibold uppercase tracking-widest text-sm mb-3">Lo que ofrezco</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+                Servicios{' '}
+                <span className="bg-gradient-to-r from-violet-400 to-amber-400 bg-clip-text text-transparent">
+                  desarrollador web freelance
+                </span>
+              </h2>
+            </div>
+            <a
+              href="#contacto"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-500 hover:to-amber-500 text-white font-semibold px-7 py-3 rounded-full transition-all duration-300 shadow-lg shadow-violet-500/20 whitespace-nowrap self-start md:self-auto"
+            >
+              Contactar →
+            </a>
+          </div>
+
+          {/* Cards */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Card 1 */}
+            <div className="group bg-slate-900/60 border border-slate-700/40 hover:border-violet-500/50 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-violet-500/10 hover:-translate-y-1">
+              <div className="w-14 h-14 bg-violet-500/15 rounded-xl flex items-center justify-center mb-6 group-hover:bg-violet-500/25 transition-colors duration-300">
+                <svg className="w-7 h-7 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <h3 className="text-white font-bold text-xl mb-3">Desarrollo de sitios web</h3>
+              <p className="text-slate-400 leading-relaxed mb-6">
+                Sitios web modernos, rápidos y responsive para emprendedores y pequeñas empresas. Desde landing pages hasta catálogos completos.
+              </p>
+              <a href="#contacto" className="inline-flex items-center gap-2 text-violet-400 hover:text-amber-400 font-medium transition-colors duration-200 text-sm">
+                → Más información
+              </a>
+            </div>
+
+            {/* Card 2 */}
+            <div className="group bg-slate-900/60 border border-slate-700/40 hover:border-violet-500/50 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-violet-500/10 hover:-translate-y-1">
+              <div className="w-14 h-14 bg-amber-500/15 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-500/25 transition-colors duration-300">
+                <svg className="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 className="text-white font-bold text-xl mb-3">Sistemas de gestión</h3>
+              <p className="text-slate-400 leading-relaxed mb-6">
+                Aplicaciones web con bases de datos para gestionar productos, clientes, ventas o inventarios. Soluciones a medida para tu negocio.
+              </p>
+              <a href="#contacto" className="inline-flex items-center gap-2 text-violet-400 hover:text-amber-400 font-medium transition-colors duration-200 text-sm">
+                → Más información
+              </a>
+            </div>
+
+            {/* Card 3 */}
+            <div className="group bg-slate-900/60 border border-slate-700/40 hover:border-violet-500/50 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-violet-500/10 hover:-translate-y-1">
+              <div className="w-14 h-14 bg-violet-500/15 rounded-xl flex items-center justify-center mb-6 group-hover:bg-violet-500/25 transition-colors duration-300">
+                <svg className="w-7 h-7 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-white font-bold text-xl mb-3">Landing pages</h3>
+              <p className="text-slate-400 leading-relaxed mb-6">
+                Páginas de captación optimizadas para convertir visitantes en clientes. Diseño atractivo, carga rápida e integración con WhatsApp o formularios.
+              </p>
+              <a href="#contacto" className="inline-flex items-center gap-2 text-violet-400 hover:text-amber-400 font-medium transition-colors duration-200 text-sm">
+                → Más información
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -776,6 +852,60 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Herramientas Section */}
+      <section className="py-24 px-6 relative bg-slate-950/50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-violet-400 font-semibold uppercase tracking-widest text-sm mb-3">Stack</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
+              Herramientas con las que trabajo
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {[
+              { name: 'HTML5',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',          level: 95, label: 'Avanzado' },
+              { name: 'CSS3',       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',            level: 90, label: 'Avanzado' },
+              { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', level: 80, label: 'Avanzado' },
+              { name: 'PHP',        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',              level: 75, label: 'Intermedio' },
+              { name: 'Python',     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',        level: 70, label: 'Intermedio' },
+              { name: 'MySQL',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',          level: 80, label: 'Avanzado' },
+              { name: 'React',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',          level: 70, label: 'Intermedio' },
+              { name: 'Next.js',    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',        level: 65, label: 'Intermedio' },
+              { name: 'Git',        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',              level: 75, label: 'Intermedio' },
+              { name: 'GitHub',     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',        level: 75, label: 'Intermedio' },
+              { name: 'VS Code',    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',        level: 95, label: 'Avanzado' },
+              { name: 'Figma',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',          level: 60, label: 'Básico' },
+            ].map((tool, i) => (
+              <div
+                key={i}
+                className="group bg-slate-900/60 border border-slate-700/40 hover:border-violet-500/40 rounded-2xl p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/10 hover:-translate-y-1"
+              >
+                <img
+                  src={tool.icon}
+                  alt={tool.name}
+                  className="w-14 h-14 mb-4 drop-shadow-md group-hover:scale-110 transition-transform duration-300"
+                  style={ tool.name === 'Next.js' || tool.name === 'GitHub' ? { filter: 'invert(1)' } : {} }
+                />
+                <p className="text-white font-semibold mb-3">{tool.name}</p>
+                <div className="w-full">
+                  <div className="flex justify-between text-xs text-slate-400 mb-1">
+                    <span className="bg-violet-600/80 text-white px-2 py-0.5 rounded-full">{tool.label}</span>
+                    <span>{tool.level}%</span>
+                  </div>
+                  <div className="w-full bg-slate-700/50 rounded-full h-1.5">
+                    <div
+                      className="h-1.5 rounded-full bg-gradient-to-r from-violet-500 to-amber-400 skill-bar-animate"
+                      style={{ '--skill-width': `${tool.level}%` }}
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
