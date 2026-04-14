@@ -23,13 +23,13 @@ function Carousel({ images, alt }) {
   const prev = () => setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
   const next = () => setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
   return (
-    <div className="relative group">
+    <div className="relative group w-full overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-violet-500/30 to-amber-500/30 rounded-2xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
-      <div className="relative rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl">
+      <div className="relative rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl w-full">
         <img
           src={images[current]}
           alt={`${alt} - vista ${current + 1}`}
-          className="w-full object-cover transition-all duration-500"
+          className="w-full h-auto max-h-96 object-contain object-center transition-all duration-500 bg-slate-800/50"
         />
         {images.length > 1 && (
           <>
@@ -453,7 +453,7 @@ export default function Portfolio() {
       </section>
 
       {/* Freelance Projects — Visual Showcase */}
-      <section id="proyectos" className="py-16 md:py-24 px-6 relative">
+      <section id="proyectos" className="py-16 md:py-24 px-6 relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-20">
             <p className="text-amber-400 font-semibold uppercase tracking-widest text-sm mb-3">✦ Proyectos freelance ✦</p>
