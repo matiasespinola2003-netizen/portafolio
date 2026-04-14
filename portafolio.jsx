@@ -104,7 +104,7 @@ export default function Portfolio() {
 
   const stats = [
     { label: 'Años de formación', value: '4+' },
-    { label: 'Proyectos realizados', value: '6+' },
+    { label: 'Proyectos realizados', value: '5+' },
     { label: 'Tecnologías dominadas', value: '15+' },
     { label: 'Certificados obtenidos', value: '4' },
   ];
@@ -426,6 +426,32 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
+      {/* Projects Hero */}
+      <section className="relative py-28 px-6 overflow-hidden">
+        <div className="absolute inset-0 projects-hero-bg"></div>
+        <div className="absolute inset-0 bg-slate-950/70"></div>
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
+          <p className="text-amber-400 font-semibold text-sm uppercase tracking-widest mb-4">
+            Mi trabajo como developer
+          </p>
+          <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
+            Descubrí cómo he ayudado a{' '}
+            <span className="bg-gradient-to-r from-violet-400 to-amber-400 bg-clip-text text-transparent">
+              marcas y emprendedores
+            </span>{' '}
+            a tener presencia digital profesional.
+          </h2>
+          <a
+            href="https://wa.me/595986370000?text=Hola%20Mat%C3%ADas,%20quiero%20trabajar%20con%20vos"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-violet-600 to-violet-700 rounded-full font-semibold text-white hover:shadow-lg hover:shadow-violet-500/30 transition-all duration-300 hover:-translate-y-1"
+          >
+            Trabajar conmigo
+          </a>
+        </div>
+      </section>
+
       {/* Freelance Projects — Visual Showcase */}
       <section id="proyectos" className="py-16 md:py-24 px-6 relative">
         <div className="max-w-7xl mx-auto">
@@ -521,6 +547,54 @@ export default function Portfolio() {
                 Ver sitio en vivo →
               </a>
             </div>
+          </div>
+
+          {/* Ara tu Tienda */}
+          <div className="grid md:grid-cols-2 gap-10 items-center mt-16 md:mt-28">
+            <div className="space-y-6">
+              <div className="inline-block px-3 py-1 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 text-sm font-medium">
+                Tienda online · Moda y accesorios
+              </div>
+              <h3 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-violet-400 to-amber-400 bg-clip-text text-transparent leading-tight">
+                Ara tu Tienda
+              </h3>
+              <p className="text-slate-300 text-lg leading-relaxed">
+                Desarrollé el sitio web completo para una <strong className="text-white">tienda de moda y accesorios</strong> en Paraguay.
+                El proyecto incluye un catálogo de productos con filtros, sección de <strong className="text-amber-400">alquiler de vestidos</strong> para eventos especiales,
+                integración con WhatsApp para consultas y un diseño elegante que transmite la identidad de la marca.
+              </p>
+              <ul className="space-y-2 text-slate-300">
+                {[
+                  'Catálogo de productos y vestidos para alquiler',
+                  'Sistema de consulta y reserva por WhatsApp',
+                  'Diseño responsivo elegante con identidad de marca',
+                  'Sección de contacto y ubicación',
+                  'Dominio propio: aratutienda.com.py'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-2">
+                    <span className="text-amber-400">▹</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-2 pt-2">
+                {['HTML', 'CSS', 'JavaScript', 'WhatsApp API', 'Dominio .com.py'].map((t, i) => (
+                  <span key={i} className="px-3 py-1 bg-slate-700/50 border border-slate-600/50 rounded-lg text-sm text-slate-300">{t}</span>
+                ))}
+              </div>
+              <a
+                href="https://aratutienda.com.py/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-500 to-amber-500 rounded-lg font-semibold hover:shadow-lg hover:shadow-violet-500/25 transition-all duration-300 hover:-translate-y-1"
+              >
+                Ver sitio en vivo →
+              </a>
+            </div>
+            <Carousel
+              images={['/images/mixboard-1.png', '/images/mixboard-2.png', '/images/mixboard-3.png']}
+              alt="Ara tu Tienda"
+            />
           </div>
         </div>
       </section>
@@ -923,6 +997,16 @@ export default function Portfolio() {
       </footer>
 
       <style jsx>{`
+        .projects-hero-bg {
+          background-color: #0a0a0f;
+          background-image:
+            linear-gradient(135deg, #1e1b4b 25%, transparent 25%),
+            linear-gradient(225deg, #1e1b4b 25%, transparent 25%),
+            linear-gradient(315deg, #1e1b4b 25%, transparent 25%),
+            linear-gradient(45deg,  #1e1b4b 25%, transparent 25%);
+          background-size: 40px 40px;
+          background-position: 0 0, 20px 0, 20px -20px, 0 20px;
+        }
         @keyframes marquee {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
