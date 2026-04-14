@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 import {
-  Github,
   Linkedin,
   Mail,
   Phone,
@@ -279,8 +278,8 @@ export default function Portfolio() {
               </a>
             </div>
             <div className="flex gap-6 pt-6">
-              <a href="https://github.com/matiasespinola2003-netizen" className="text-slate-400 hover:text-violet-400 transition-colors duration-300">
-                <Github size={24} />
+              <a href="https://www.instagram.com/_espinolamati/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-violet-400 transition-colors duration-300">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
               </a>
               <a href="https://linkedin.com/in/matias-espinola-19a2363ab" className="text-slate-400 hover:text-violet-400 transition-colors duration-300">
                 <Linkedin size={24} />
@@ -313,8 +312,8 @@ export default function Portfolio() {
                       <p className="text-violet-400 text-sm">Dev Fullstack · Paraguay 🇵🇾</p>
                     </div>
                     <div className="flex gap-3">
-                      <a href="https://github.com/matiasespinola2003-netizen" className="w-9 h-9 bg-slate-800/80 hover:bg-violet-600 rounded-full flex items-center justify-center transition-colors duration-200">
-                        <Github size={16} />
+                      <a href="https://www.instagram.com/_espinolamati/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-slate-800/80 hover:bg-violet-600 rounded-full flex items-center justify-center transition-colors duration-200">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                       </a>
                       <a href="https://linkedin.com/in/matias-espinola-19a2363ab" className="w-9 h-9 bg-slate-800/80 hover:bg-violet-600 rounded-full flex items-center justify-center transition-colors duration-200">
                         <Linkedin size={16} />
@@ -877,7 +876,7 @@ export default function Portfolio() {
               { name: 'React',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',          level: 70, label: 'Intermedio' },
               { name: 'Next.js',    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',        level: 65, label: 'Intermedio' },
               { name: 'Git',        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',              level: 75, label: 'Intermedio' },
-              { name: 'GitHub',     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',        level: 75, label: 'Intermedio' },
+              { name: 'Tailwind',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg', level: 75, label: 'Intermedio' },
               { name: 'VS Code',    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',        level: 95, label: 'Avanzado' },
               { name: 'Figma',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',          level: 60, label: 'Básico' },
             ].map((tool, i) => (
@@ -889,7 +888,7 @@ export default function Portfolio() {
                   src={tool.icon}
                   alt={tool.name}
                   className="w-14 h-14 mb-4 drop-shadow-md group-hover:scale-110 transition-transform duration-300"
-                  style={ tool.name === 'Next.js' || tool.name === 'GitHub' ? { filter: 'invert(1)' } : {} }
+                  style={ tool.name === 'Next.js' ? { filter: 'invert(1)' } : {} }
                 />
                 <p className="text-white font-semibold mb-3">{tool.name}</p>
                 <div className="w-full">
@@ -1118,8 +1117,8 @@ export default function Portfolio() {
               © 2025 Matías Espinola. Todos los derechos reservados.
             </div>
             <div className="flex gap-6">
-              <a href="https://github.com/matiasespinola2003-netizen" className="text-slate-400 hover:text-violet-400 transition-colors duration-300">
-                <Github size={20} />
+              <a href="https://www.instagram.com/_espinolamati/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-violet-400 transition-colors duration-300">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
               </a>
               <a href="https://linkedin.com/in/matias-espinola-19a2363ab" className="text-slate-400 hover:text-violet-400 transition-colors duration-300">
                 <Linkedin size={20} />
