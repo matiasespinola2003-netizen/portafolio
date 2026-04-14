@@ -246,7 +246,7 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+      <section id="inicio" className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
         <div className="max-w-7xl w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
           <div className="space-y-6 animate-fadeIn">
             <div className="inline-block px-4 py-2 bg-violet-500/10 border border-violet-500/20 rounded-full text-violet-400 text-sm font-medium">
